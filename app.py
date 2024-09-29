@@ -31,18 +31,18 @@ st.markdown("## Business Use Cases")
 # Display images and labels
 col1, col2 = st.columns(2)
 with col1:
-    st.image("voiceAssistance.jpeg", caption="Multilingual Virtual Assistants")
+    st.image("C:/Users/Pranali/Downloads/img5.jpeg", caption="Multilingual Virtual Assistants")
     st.markdown("**Multilingual Virtual Assistants**")
 with col2:
-    st.image("callcentreImg.jpeg", caption="Customer Service Automation")
+    st.image("C:/Users/Pranali/Downloads/img3.jpeg", caption="Customer Service Automation")
     st.markdown("**Customer Service Automation**")
 
 col3, col4 = st.columns(2)
 with col3:
-    st.image("voicesecurity.jpeg", caption="Security and Surveillance")
+    st.image("C:/Users/Pranali/Downloads/img.jpeg", caption="Security and Surveillance")
     st.markdown("**Security and Surveillance**")
 with col4:
-    st.image("voiceBiometric.jpeg", caption="Language-Agnostic Voice Biometrics")
+    st.image("C:/Users/Pranali/Downloads/img5.jpeg", caption="Language-Agnostic Voice Biometrics")
     st.markdown("**Language-Agnostic Voice Biometrics**")
 
 # Business Use Cases Markdown
