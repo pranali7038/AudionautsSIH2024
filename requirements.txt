@@ -1,1 +1,7 @@
+streamlit==1.25.0
+librosa==0.10.0
+numpy==1.23.5  # Librosa depends on numpy for handling arrays
+scipy==1.10.0  # Librosa requires scipy for certain signal processing functions
+soundfile==0.12.1  # Librosa requires soundfile for audio file loading
+
 
