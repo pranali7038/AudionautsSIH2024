@@ -1,4 +1,4 @@
 streamlit==1.20.0  # or latest compatible version
 gradio==3.24.0  # or latest compatible version
 librosa==0.10.0  # or latest compatible version
-llvmlite==0.39.1  # or latest compatible version (ensure it's supported in your setup)
+llvmlite==0.40.0  # Check if this version is compatible
