@@ -26,8 +26,8 @@ audio_option = st.radio("Choose audio source:", ("Use sample audio", "Upload you
 
 if audio_option == "Use sample audio":
     # Update the file path to the correct absolute path
-    st.audio("C:/Users/Pranali/Downloads/sih2024/audioSample.wav", format="audio/wav")
-    audio_file = "C:/Users/Pranali/Downloads/sih2024/audioSample.wav"
+    st.audio("audioSample.wav", format="audio/wav")
+    audio_file = "audioSample.wav"
 else:
     audio_file = st.file_uploader("Upload Audio File", type=["wav", "mp3", "ogg"])
 
