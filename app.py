@@ -1,6 +1,5 @@
 import streamlit as st
 import librosa
-import os
 
 # Function for keyword spotting
 def keyword_spotting(audio_file):
@@ -26,8 +25,9 @@ st.subheader("Audio Input")
 audio_option = st.radio("Choose audio source:", ("Use sample audio", "Upload your own audio"))
 
 if audio_option == "Use sample audio":
-    st.audio("audioSample.wav", format="audio/wav")
-    audio_file = "sample_audio.wav"
+    # Update the file path to the correct absolute path
+    st.audio("C:/Users/Pranali/Downloads/sih2024/audioSample.wav", format="audio/wav")
+    audio_file = "C:/Users/Pranali/Downloads/sih2024/audioSample.wav"
 else:
     audio_file = st.file_uploader("Upload Audio File", type=["wav", "mp3", "ogg"])
 
