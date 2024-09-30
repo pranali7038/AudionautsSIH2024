@@ -25,7 +25,7 @@ st.subheader("Audio Input")
 audio_option = st.radio("Choose audio source:", ("Use sample audio", "Upload your own audio"))
 
 if audio_option == "Use sample audio":
-    # Update the file path to the correct absolute path
+    # Reference the audio file with a relative path since it's in the same directory
     st.audio("audio.wav", format="audio/wav")
     audio_file = "audio.wav"
 else:
