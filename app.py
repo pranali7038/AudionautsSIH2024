@@ -1,5 +1,6 @@
 import streamlit as st
 import librosa
+import os
 
 # Function for keyword spotting
 def keyword_spotting(audio_file):
@@ -9,21 +10,33 @@ def keyword_spotting(audio_file):
         result = "Keyword found: one, two, three, seven"  # Dummy result
         return result
     else:
-        return "No audio file uploaded."
+        return "No audio file selected."
 
 # Streamlit app
 st.title("Few Shot Language Agnostic Keyword Spotting System (FSLAKWS)")
-
 st.markdown("""
     Welcome to the FSLAKWS system prototype. This system is designed to detect keywords in audio files 
     with very few examples provided for training. It works across multiple languages and varying sample rates.
 """)
 
 # Audio Input Section
-audio_file = st.file_uploader("Upload Audio File", type=["wav", "mp3", "ogg"])
+st.subheader("Audio Input")
+
+# Option to choose between sample audio and upload
+audio_option = st.radio("Choose audio source:", ("Use sample audio", "Upload your own audio"))
+
+if audio_option == "Use sample audio":
+    st.audio("audioSample.wav", format="audio/wav")
+    audio_file = "sample_audio.wav"
+else:
+    audio_file = st.file_uploader("Upload Audio File", type=["wav", "mp3", "ogg"])
+
 if st.button("Spot Keyword"):
-    result = keyword_spotting(audio_file)
-    st.text_area("Result", result)
+    if audio_file:
+        result = keyword_spotting(audio_file)
+        st.text_area("Result", result)
+    else:
+        st.warning("Please select an audio source before spotting keywords.")
 
 # Business Use Cases Section
 st.markdown("## Business Use Cases")
@@ -36,7 +49,6 @@ with col1:
 with col2:
     st.image("img3.jpeg", caption="Customer Service Automation")
     st.markdown("**Customer Service Automation**")
-
 col3, col4 = st.columns(2)
 with col3:
     st.image("img.jpeg", caption="Security and Surveillance")
@@ -49,17 +61,17 @@ with col4:
 st.markdown("""
 **1. Speech Recognition Systems**:
 - Enhance existing speech recognition systems by adding multilingual keyword detection capabilities, making them more versatile and useful in global markets.
-
+            
 **2. Customer Service Automation**:
 - Implement in call centers to automatically detect and flag important keywords during customer interactions, enabling real-time sentiment analysis and better customer support.
-
+            
 **3. Security and Surveillance**:
 - Deploy in security systems to monitor and detect critical keywords in multiple languages, improving the efficiency of threat detection and response in diverse environments.
-
-**4. Media Monitoring**:
+            
+**4. Media Monitoring**:        
 - Utilize in media and content monitoring systems to track specific keywords or phrases across various languages in audio content, helping brands manage their reputation.
-
-**5. Voice-Activated Assistants**:
+            
+**5. Voice-Activated Assistants**:    
 - Integrate into voice-activated assistants to support multilingual command recognition, expanding their usability across different regions and languages.
 """)
 
